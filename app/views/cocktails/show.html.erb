@@ -2,6 +2,8 @@
 <h3>L'abus d'alcool est dangereux pour la santé...</h3>
 <p>en même temps l'excès d'eau aussi...</p>
 
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+
 <ul class="list-group">
   <% @cocktail.doses.each do |dose| %>
   <li class="list-group-item"><%= dose.description %> <%= dose.ingredient.name %> <%= link_to "Remove", dose_path(dose), method: :delete, data: { confirm: "are you sure?" }  %></li>
