@@ -1,0 +1,9 @@
+<h1>🍹 Add a new cocktail 🍹</h1>
+<h3>L'abus d'alcool est dangereux pour la santé...</h3>
+<p>en même temps l'excès d'eau aussi...</p>
+
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name %>
+  <%= f.button :submit %>
+<% end %>
+

@@ -1,0 +1,14 @@
+<h1>🍹 <%= @cocktail.name %> 🍹</h1>
+<h3>L'abus d'alcool est dangereux pour la santé...</h3>
+<p>en même temps l'excès d'eau aussi...</p>
+
+<ul class="list-group">
+  <% @cocktail.doses.each do |dose| %>
+  <li class="list-group-item"><%= dose.description %> <%= dose.ingredient.name %> <%= link_to "Remove", dose_path(dose), method: :delete, data: { confirm: "are you sure?" }  %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Add an Ingredient", new_cocktail_dose_path(@cocktail)  %>
+
+<%= link_to "Back to cocktails", cocktails_path %>
+
